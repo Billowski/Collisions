@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class TargetSelector : MonoBehaviour
 {
-    public Camera camera;
+    public new Camera camera;
     public float forceSize;
 
-    private Rigidbody rigidbody;
+    private Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -28,7 +28,7 @@ public class TargetSelector : MonoBehaviour
                     Vector3 distanceToTarget = hitInfo.point - transform.position;
                     Vector3 forceDirection = distanceToTarget.normalized;
 
-                    rigidbody.AddForce(forceDirection * forceSize, ForceMode.Impulse);
+                    rb.AddForce(forceDirection * forceSize, ForceMode.Impulse);
                 }
             }
         }

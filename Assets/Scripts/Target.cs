@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
-    private Renderer renderer;
+    private Renderer render;
     // Start is called before the first frame update
     void Start()
     {
-        renderer = GetComponent<Renderer>();
+        render = GetComponent<Renderer>();
     }
     
     // Update is called once per frame
@@ -19,11 +19,11 @@ public class Target : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        renderer.material.color = Color.red;
+        render.material.color = Color.red;
     }
 
     private void OnMouseExit()
     {
-        renderer.material.color = Color.white;
+        render.material.color = Color.white;
     }
 }

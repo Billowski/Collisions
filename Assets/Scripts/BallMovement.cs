@@ -8,11 +8,11 @@ public class BallMovement : MonoBehaviour
     public float forceSize;
 
     private Vector3 forceDirection;
-    private Rigidbody rigidbody;
+    private Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -29,6 +29,6 @@ public class BallMovement : MonoBehaviour
     {
         Vector3 force = forceDirection * forceSize;
 
-        rigidbody.AddForce(force);
+        rb.AddForce(force);
     }
 }

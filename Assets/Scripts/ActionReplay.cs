@@ -7,12 +7,12 @@ public class ActionReplay : MonoBehaviour
     private bool isInReplayMode;
     private float currentReplayIndex;
     private float indexChangeRate;
-    private Rigidbody rigidbody;
+    private Rigidbody rb;
     private List<ActionReplayRecord> actionReplayRecords = new List<ActionReplayRecord>();
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -25,12 +25,12 @@ public class ActionReplay : MonoBehaviour
             if (isInReplayMode)
             {
                 SetTransform(0);
-                rigidbody.isKinematic = true;
+                rb.isKinematic = true;
             } 
             else
             {
                 SetTransform(actionReplayRecords.Count - 1);
-                rigidbody.isKinematic = false;
+                rb.isKinematic = false;
             }
         }
 
