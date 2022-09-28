@@ -6,7 +6,7 @@ using UnityEngine;
 public class TimeBody : MonoBehaviour
 {
     private bool isRewinding = false;
-    List<PointInTime> pointsInTime;
+    public List<PointInTime> pointsInTime;
     Rigidbody rb;
 
     Vector3 vel;
